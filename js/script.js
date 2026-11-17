@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelAnimationFrame(animationFrame);
 
         animationFrame = requestAnimationFrame(() => {
-            const x = (event.clientX / window.innerWidth - 0.5) * 10;
-            const y = (event.clientY / window.innerHeight - 0.5) * 10;
+           const x = (event.clientX / window.innerWidth - 0.5) * 6;
+const y = (event.clientY / window.innerHeight - 0.5) * 6;
 
             background.style.transform =
                 `translate3d(${x}px, ${y}px, 0)`;
