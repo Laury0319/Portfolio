@@ -1445,3 +1445,52 @@ button {
     }
 
 }
+
+/* ===== FOND CARTOGRAPHIQUE DE L'ACCUEIL ===== */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #123C36;
+    z-index: 0;
+}
+
+#hero-map {
+    position: absolute;
+    inset: -30px;
+    width: calc(100% + 60px);
+    height: calc(100% + 60px);
+    z-index: 0;
+    animation: map-drift 35s ease-in-out infinite alternate;
+}
+
+/* Voile sombre pour protéger la lisibilité du texte */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 35, 31, 0.78),
+        rgba(10, 35, 31, 0.58)
+    );
+    pointer-events: none;
+}
+
+/* Mouvement très lent */
+@keyframes map-drift {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.06);
+    }
+}
+
+/* Respect des préférences de réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+    #hero-map {
+        animation: none;
+    }
+}
