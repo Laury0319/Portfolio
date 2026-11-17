@@ -1494,3 +1494,42 @@ button {
         animation: none;
     }
 }
+
+/* ===== FOND ANIME DE L'ACCUEIL ===== */
+
+#hero-map {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../images/fond-anime.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+/* Voile sombre et élégant */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        120deg,
+        rgba(5, 20, 16, 0.68),
+        rgba(5, 25, 20, 0.48),
+        rgba(5, 20, 16, 0.68)
+    );
+
+    pointer-events: none;
+}
+
+/* Le contenu reste au-dessus du fond */
+.hero-content,
+.scroll-indicator {
+    position: relative;
+    z-index: 2;
+}
