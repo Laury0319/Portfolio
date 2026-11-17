@@ -307,10 +307,7 @@ button {
 
     font-size: 0.72rem;
 
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: all 0.3s ease;
 
 }
 
