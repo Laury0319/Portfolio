@@ -475,19 +475,22 @@ button {
 }
 
 .photo-placeholder {
-
     aspect-ratio: 4 / 5;
-
-    background: var(--green);
-
+    background: linear-gradient(145deg, #123C36, #1d5148);
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     color: var(--sand);
+    position: relative;
+    overflow: hidden;
+}
 
+.photo-placeholder::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(201, 164, 91, 0.55);
+    pointer-events: none;
 }
 
 .photo-placeholder div {
