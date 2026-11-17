@@ -122,3 +122,36 @@ document
         observer.observe(element);
 
     });
+
+/* ===== INTERACTIVITE DU FOND D'ACCUEIL ===== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const background = document.querySelector("#hero-map");
+
+    if (!background) return;
+
+    // Respecter les préférences de réduction des animations
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+    }
+
+    let animationFrame;
+
+    window.addEventListener("pointermove", (event) => {
+        if (event.pointerType !== "mouse") return;
+
+        cancelAnimationFrame(animationFrame);
+
+        animationFrame = requestAnimationFrame(() => {
+            const x = (event.clientX / window.innerWidth - 0.5) * 10;
+            const y = (event.clientY / window.innerHeight - 0.5) * 10;
+
+            background.style.transform =
+                `translate3d(${x}px, ${y}px, 0)`;
+        });
+    }, { passive: true });
+
+    window.addEventListener("pointerleave", () => {
+        background.style.transform = "translate3d(0, 0, 0)";
+    });
+});
